@@ -64,3 +64,10 @@ There is no decimal fallback. `parse_int("123")` raises
 `InvalidLiteralError`, because `123` has no radix marker. If you need to accept
 plain decimal literals as well, check for a leading `0x`/`0b`/`0o` yourself and
 fall back to `int(text, 10)`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
