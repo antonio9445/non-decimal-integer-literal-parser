@@ -1,6 +1,6 @@
 [project]
 name = "non-decimal-integer-literal-parser"
-version = "0.1.2"
+version = "0.1.3"
 description = "Converts C-style hex, binary, and octal literals to Python integers."
 requires-python = ">=3.10"
 dependencies = []
